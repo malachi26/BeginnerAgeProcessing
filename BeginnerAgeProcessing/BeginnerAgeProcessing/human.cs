@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BeginnerAgeProcessing
 {
-    interface human
+    interface Human
     {
+        DateTime DOB { get; set; }
+
     }
 }

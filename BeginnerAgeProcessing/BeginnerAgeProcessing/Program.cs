@@ -28,11 +28,12 @@ namespace BeginnerAgeProcessing
             Console.WriteLine("Please enter the number of siblings");
             var siblingCount = new int();
             int.TryParse(Console.ReadLine(), out siblingCount);
-            var siblingDictionary = new Dictionary<int, DateTime>();
+            var siblingDictionary = new Dictionary<int, Sibling>();
             for (int i = 1; i < siblingCount + 1; i++)
             {
                 Console.Write("Please Enter the date of birth for sibling " + i.ToString() + ":");
                 var siblingDOB = DateTime.Parse(Console.ReadLine());
+                siblingDictionary.Add(i, new Sibling(siblingDOB));
                 Console.WriteLine(siblingDOB.ToString());                
             }
             Console.ReadLine();
