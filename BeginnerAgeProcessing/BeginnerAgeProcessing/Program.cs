@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BeginnerAgeProcessing
 {
@@ -30,13 +28,12 @@ namespace BeginnerAgeProcessing
             var siblingCount = new int();
             int.TryParse(Console.ReadLine(), out siblingCount);
             var siblings = new List<Sibling>();
-            //var siblingDictionary = new Dictionary<int, Sibling>();
             for (int i = 1; i < siblingCount + 1; i++)
             {
                 Console.Write("Please Enter the date of birth for sibling " + i.ToString() + ":");
                 siblings.Add(new Sibling(DateTime.Parse(Console.ReadLine())));
             }
-            siblings = (List<Sibling>)siblings.OrderByDescending(x => x.DOB).ToList<Sibling>();
+            siblings = siblings.OrderByDescending(x => x.DOB).ToList();
 
             for (int i = 1; i < siblings.Count + 1; i++)
             {
